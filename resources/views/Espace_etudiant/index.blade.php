@@ -1,41 +1,5 @@
 <x-compementetudiant title="Espace etudiant">
-    <style>
-        /* Resetting default margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        .announcement-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .announcement-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-        .announcement-content {
-            font-size: 16px;
-            color: #666;
-        }
-        .announcement-content ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-    </style>
+<link rel="stylesheet" href="assets/Etudiant/css/cards_annonce.css">
 
         <div class="container">
             <div class="announcement-header">
