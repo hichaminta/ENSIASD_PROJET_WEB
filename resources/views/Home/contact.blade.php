@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <form action="" onsubmit="return Validate()">
+            <form  action="{{route('home.index')}}" onsubmit="return Validate()">
             <div class="row">
               <div class="col-lg-6 col-12">
                 <div class="form-group">
@@ -80,7 +80,7 @@
               <div class="col-lg-6 col-12">
                 <div class="form-group">
                   <label for="name">Email <small>*</small></label>
-                  <input id="email" name="email" class="form-control _ge_de_ol" type="text" placeholder="Entrer Email" required="" aria-required="true">
+                  <input id="email" name="email" class="form-control _ge_de_ol" type="email" placeholder="Entrer Email" required="" aria-required="true">
                   <h6 id="emailerror"></h6>
 
                 </div>
@@ -111,7 +111,7 @@
                   <h6 id="messageerror"></h6>
 
                   <div class="text-right">
-                    <button type="submit" class="gold-button">Envoyer</button>
+                    <input type="submit" class="gold-button" value="Envoyer">
                   </div>
 
                 </div>
@@ -126,69 +126,90 @@
     <section class="mab-01 mt-3 mb-2 mx-2" style="border-style: solid; border-color: #FDC800;">
         <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.459857261038!2d-8.869017925348889!3d30.493316897165617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb173001472dcc1%3A0x3f2507f09223083!2sEcole%20Nationale%20Sup%C3%A9rieure%20de%20l&#39;Intelligence%20Artificielle%20et%20Sciences%20des%20Donn%C3%A9es!5e1!3m2!1sfr!2sma!4v1706972956373!5m2!1sfr!2sma" height="450" frameborder="0" allowfullscreen=""></iframe>
     </section>
+    <style>
+        .gold-button {
+      background-color: gold;
+      color: #fff; /* Change the text color as needed */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .gold-button:hover {
+      background-color: goldenrod; /* Change the color on hover if desired */
+    }
+    </style>
+    <script>
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function Validate() {
+        var nom = document.getElementById('nom').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        // Error div
+        var nomError = document.getElementById('Nomerror');
+        var email_error = document.getElementById('emailerror');
+        var subjecterror = document.getElementById('subjecterror');
+        var phoneerror = document.getElementById('phoneerror');
+        var messageerror = document.getElementById('messageerror');
+
+        nomError.innerHTML = '';
+        email_error.innerHTML = '';
+        subjecterror.innerHTML = '';
+        phoneerror.innerHTML = '';
+        messageerror.innerHTML = '';
+        var i=0;
+        if (nom.trim() === '') {
+            nomError.innerHTML = 'Veuillez entrer votre nom';
+            i=1;
+        }
+
+        if (email.trim() === '') {
+            email_error.innerHTML = 'Veuillez entrer votre email';
+            i=1;
+
+        } else if (!validateEmail(email)) {
+            email_error.innerHTML = 'Format email invalide';
+            i=1;
+
+        }
+        if (phone.trim() === '') {
+            phoneerror.innerHTML = 'Veuillez entrer votre téléphone';
+            i=1;
+
+
+        } else if (!/^\d{10}$/.test(phone)) {
+            phoneerror.innerHTML = 'Numéro de téléphone invalide. Doit être composé de 10 chiffres';
+            i=1;
+
+        }
+        if (subject.trim() === '') {
+            subjecterror.innerHTML = 'Veuillez entrer votre sujet';
+            i=1;
+
+        }
+        if (message.trim() === '') {
+            messageerror.innerHTML = 'Veuillez entrer votre message';
+            i=1;
+
+        }
+        if(i==0){
+            return true;
+
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    </script>
 
 </x-compementHome>
-<style>
-    .gold-button {
-  background-color: gold;
-  color: #fff; /* Change the text color as needed */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-}
-.gold-button:hover {
-  background-color: goldenrod; /* Change the color on hover if desired */
-}
-</style>
-<script>
-function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
-
-function Validate() {
-    var nom = document.getElementById('nom').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
-    // Error div
-    var nomError = document.getElementById('Nomerror');
-    var email_error = document.getElementById('email_error');
-    var subjecterror = document.getElementById('subjecterror');
-    var phoneerror = document.getElementById('phoneerror');
-    var messageerror = document.getElementById('messageerror');
-
-    nomError.innerHTML = '';
-    email_error.innerHTML = '';
-    subjecterror.innerHTML = '';
-    phoneerror.innerHTML = '';
-    messageerror.innerHTML = '';
-    if (nom.trim() === '') {
-        nomError.innerHTML = 'Veuillez entrer votre nom';
-    }
-
-    if (email.trim() === '') {
-        email_error.innerHTML = 'Veuillez entrer votre email';
-    } else if (!validateEmail(email)) {
-        email_error.innerHTML = 'Format email invalide';
-    }
-    if (phone.trim() === '') {
-        phoneerror.innerHTML = 'Veuillez entrer votre telephone';
-
-    }else if (!/^\d{10}$/.test(tele)) {
-        phoneerror.innerHTML = 'Numéro de téléphone invalide ET Doit etre 10 chifre';
-       }
-if (subject.trim() === '') {
-        subjecterror.innerHTML = 'Veuillez entrer votre sujet';
-    }
-    if (message.trim() === '') {
-        messageerror.innerHTML = 'Veuillez entrer votre sujet';
-    }
-    return true;
-}
-
-</script>

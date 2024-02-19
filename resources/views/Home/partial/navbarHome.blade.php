@@ -19,8 +19,8 @@
                                 <li><a href="{{route('evenement.index')}}">Evennement</a></li>
                                 <li><a href="">Formation</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Sécurité IT et Confiance Numérique</a></li>
-                                        <li><a href="#">Sciences des données, Big Data et IA</a></li>
+                                        <li><a href="assets/pdf/Sécurité IT et Confiance Numérique.pdf" download>Sécurité IT et Confiance Numérique</a></li>
+                                        <li><a href="assets/pdf/Sciences des Données, Big data & IA.pdf" download="">Sciences des données, Big Data et IA</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{route('contact.index')}}">Contact</a></li>
