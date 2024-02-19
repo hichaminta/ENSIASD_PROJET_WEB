@@ -1,0 +1,11 @@
+    /* Custom search input style */
+    
+    .custom-search {
+        width: 200px;
+        /* Set the width to your desired value */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
