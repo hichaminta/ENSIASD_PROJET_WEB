@@ -158,7 +158,7 @@ a:hover {
     display: block !important;
     position: relative;
     top: 0; } }
-    
+
    .my-nav .nav-items .menu-items .menu ul li.menu-item6 {
   text-decoration: none;
   display: inline-block;
@@ -199,7 +199,7 @@ a:hover {
   width: 100%;
   text-align: left;
   transform: translateY(-1px);
- 
+
 }
 
 .my-nav .nav-items .menu-items .menu ul li:hover .sub-menu {
@@ -448,8 +448,8 @@ a:hover {
       font-size: 25px;
       color: #fdc800;
       display: block;
-      padding: 10px 0px; 
-      width: 150%;
+      padding: 10px 0px;
+      /* width: 150%; */
     }
     .bg-03 ._lk_bg_cd .counting {
       display: block;
@@ -675,7 +675,7 @@ footer {
     @media screen and (max-width: 576px) {
       footer ._kl_de_w {
         margin: 10px 0 0 0; } }
-   
+
     footer ._kl_de_w ol li {
       display: block;
       margin: 0 25px 0 0;
@@ -723,13 +723,13 @@ footer .social-icons li {
 }
 
 footer .social-icons a {
-  color: #bec21f; 
+  color: #bec21f;
   font-size: 24px;
   text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #007bff; 
+  color: #007bff;
 }
 
 footer.container.social-icons {
