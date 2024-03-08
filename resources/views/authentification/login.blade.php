@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 box-de">
                     <a class="ditk-inf">
-                        <h2 class="w-100">Bienvenue</h2>
+                        <h2 class="w-100">Bienvenue A  ENSIASD</h2>
                         <p>Créez simplement votre compte en <br>cliquant sur le bouton S'inscrire</p>
                         <a href="{{route('Inscription.index')}}"><button type="button"
                                 class="btn btn-outline-light">S'inscrire</button></a>

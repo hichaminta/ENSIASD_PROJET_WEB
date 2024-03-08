@@ -17,10 +17,6 @@
         }
         if (password.trim() === '') {
             passwordError.innerHTML = 'Veuillez entrer votre mot de passe';
-        } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(password)) {
-            passwordError.innerHTML =
-                'Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre, et être d\'au moins 8 caractères';
-
         }
         return true;
     }
