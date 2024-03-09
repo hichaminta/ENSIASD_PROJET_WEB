@@ -65,7 +65,23 @@
     </section>
 
     <!-- ====================== Form started====================== -->
+    @if (session('success'))
+    <x-alertement type="success">
+        {{ session('success') }}
+    </x-alertement>
+@endif
+@if ($errors->any())
+    <ul>
+        <x-alertement type="danger">
 
+            @foreach ($errors->all() as $error)
+                <li>{!! $error !!}</li>
+            @endforeach
+    </ul>
+    </x-alertement>
+
+
+@endif
     <section class="my-pla">
         <div class="container">
             <div class="row">
@@ -75,7 +91,9 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ route('home.index') }}" onsubmit="return Validate()">
+            <form action="{{ route('contact.create') }}" method="POST" onsubmit="return Validate()">
+                @csrf
+
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="form-group">
@@ -125,12 +143,9 @@
 
                             <div class="text-right">
                                 <input type="submit" class="gold-button" value="Envoyer">
-
                             </div>
-
                         </div>
                     </div>
-
                 </div>
         </div>
         </form>

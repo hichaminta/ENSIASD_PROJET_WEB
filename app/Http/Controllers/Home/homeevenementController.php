@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Actualite;
 use Illuminate\Http\Request;
 
 class homeevenementController extends Controller
 {
     public function Evenementindex(){
-        return view('Home.evenement');
+        $evenements = Actualite::where('Typeactualites', 'ev')->get();
+        return view('Home.evenement',compact('evenements'));
     }
-    public function detailsevent(){
-        return view('Home.detailleEvent');
+    public function detailsevent(Actualite $evenement){
+    return view('Home.detailleEvent', compact('evenement'));
     }
 }

@@ -162,53 +162,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <article class="_lk_bg_sd_we">
-                        <div class="_bv_xs_we"></div>
-                        <div class="_xs_we_er">
-                            <div class="_he_w">
-                                <h3>Assemblée générale de DATA-SECURE</h3>
-                                <ol>
-                                    <li> administration<span class="_mn_cd_xs">07/02/2024</span></li>
-                                </ol>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore.</p>
+                @foreach ($actualites as $actualite)
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <article class="_lk_bg_sd_we">
+                            <div class="_bv_xs_we" style="background:url(assets/Home/images/blog/news.jpg"></div>
+                            <div class="_xs_we_er">
+                                <div class="_he_w">
+                                    <h3>{{$actualite->Titreactualites}}</h3>
+                                    <ol>
+                                        <li>{{$actualite->Createur}}<span class="_mn_cd_xs">{{$actualite->dateactualites}}</span></li>
+                                    </ol>
+                                    <p>{{$actualite->Descriptionactualites}}</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <article class="_lk_bg_sd_we">
-                        <div class="_bv_xs_we" style="background:url(assets/Home/images/blog/news.jpg"></div>
-                        <div class="_xs_we_er">
-                            <div class="_he_w">
-                                <h3>DGSSI CTF 2024</h3>
-                                <ol>
-                                    <li>administration<span class="_mn_cd_xs">07/02/2024</span></li>
-                                </ol>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <article class="_lk_bg_sd_we">
-                        <div class="_bv_xs_we" style="background:url(assets/Home/images/blog/news.jpg"></div>
-                        <div class="_xs_we_er">
-                            <div class="_he_w">
-                                <h3>Visite terrain au DATA CENTER BENGUERIR </h3>
-                                <ol>
-                                    <li> administration<span class="_mn_cd_xs">26/02/2024</span></li>
-                                </ol>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

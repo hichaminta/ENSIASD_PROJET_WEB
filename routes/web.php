@@ -19,13 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/EspaceEtudiant', [HomeSPaceetudiantConroller::class, 'Espace_etudiant_Homeindex'])->name('espace_etudiant.index');
+
 });
 Route::get('/', [homeController::class, 'Homeindex'])->name('home.index');
 Route::get('/evenement', [homeevenementController::class, 'Evenementindex'])->name('evenement.index');
-Route::get('/evenement/{id}', [homeevenementController::class, 'detailsevent'])->name('evenement.detialls');
+Route::get('/evenement/{evenement}', [homeevenementController::class, 'detailsevent'])->name('evenement.detialls');
 Route::get('/Login', [ControllerLogin::class, 'LoginIndex'])->name('Login.index');
+Route::post('/Login', [ControllerLogin::class, 'Loginconnecter'])->name('Login.connecter');
+Route::get('/lougout', [ControllerLogin::class, 'lougout'])->name('lougout.index');
 Route::get('/Inscription', [Controllerinscription::class, 'Inscription_Index'])->name('Inscription.index');
-Route::get('/EspaceEtudiant', [HomeSPaceetudiantConroller::class, 'Espace_etudiant_Homeindex'])->name('espace_etudiant.index');
 Route::get('/contact', [contactController::class, 'Conatactindex'])->name('contact.index');
+Route::post('/contactCreate', [contactController::class, 'inserercontact'])->name('contact.create');

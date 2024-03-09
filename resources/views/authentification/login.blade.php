@@ -25,13 +25,29 @@
                     <div class="row no-margin past">
                         <p>N'avez-vous pas de compte ?<span> Créez votre compte</span> </p>
                     </div>
+                    @if (session('success'))
+                    <x-alertement type="success">
+                        {{ session('success') }}
+                    </x-alertement>
+                @endif
+                @if ($errors->any())
+                    <ul>
+                        <x-alertement type="danger">
 
-                    <form action="#" onsubmit="ValidateLogin()" >
+                            @foreach ($errors->all() as $error)
+                                <li>{!! $error !!}</li>
+                            @endforeach
+                    </ul>
+                    </x-alertement>
 
+
+                @endif
+                    <form action="{{route('Login.connecter')}}" method="POST" onsubmit="ValidateLogin()" >
+@csrf
                         <div class="text-box-cont">
                             <div class="input-group mb-3">
 
-                                <input type="email" class="form-control" placeholder="email" aria-label="Username"
+                                <input type="email" name="email" class="form-control" placeholder="email" aria-label="Username"
                                     aria-describedby="basic-addon1" id="email">
                             </div>
                             <div class="input-group mb-3">
@@ -39,7 +55,7 @@
                                 </div>
                             <div class="input-group mb-3">
 
-                                <input type="password" id="password" class="form-control" placeholder="mot de passe"
+                                <input type="password" name="password" id="password" class="form-control" placeholder="mot de passe"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <div class="row no-margin">
