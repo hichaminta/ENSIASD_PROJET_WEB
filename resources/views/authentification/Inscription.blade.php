@@ -34,6 +34,22 @@
 
 
     <div class="container">
+        @if (session('success'))
+        <x-alertement type="success">
+            {{ session('success') }}
+        </x-alertement>
+    @endif
+    @if ($errors->any())
+        <ul>
+            <x-alertement type="danger">
+
+                @foreach ($errors->all() as $error)
+                    <li>{!! $error !!}</li>
+                @endforeach
+        </ul>
+        </x-alertement>
+
+ @endif
         <div class="title">Formulaire d'inscription</div>
         <div class="content">
             <form action="{{ route('Inscription.creation') }}"  method="POST"
@@ -55,7 +71,7 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Date de naissance</span>
-                        <input type="date" name="date" id="date_naissance" placeholder="Entrer votre date de naissance">
+                        <input type="date" name="date_naissance" id="date_naissance" placeholder="Entrer votre date de naissance">
                         <h6 class="error" id="date_de_naissanceerror"></h6>
 
                     </div>
@@ -100,14 +116,19 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Confirmer le mot de passe</span>
-                        <input type="password" id="confpassword" placeholder="Confirmer votre mot de passe">
+                        <input type="password" name="confpass" id="confpassword" placeholder="Confirmer votre mot de passe">
                         <h6 class="error" name="confpass" id="confpasswordeerror"></h6>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">CNE</span>
+                        <input type="text" id="CNE" name="CNE" >
+                        <h6 class="error"  id="CNE"></h6>
                     </div>
                 </div>
 
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1" value="1">
-                    <input type="radio" name="gender" id="dot-2"  value="2">
+                    <input type="radio" name="gender" id="dot-1" value="M">
+                    <input type="radio" name="gender" id="dot-2"  value="F">
                     <span class="gender-title">Genre</span>
                     <div class="category">
                         <label for="dot-1">
