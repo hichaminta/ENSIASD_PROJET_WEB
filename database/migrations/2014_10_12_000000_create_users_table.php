@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('CNI')->unique();
             $table->string('CNE')->unique();
             $table->text('role');
+            $table->boolean('sexe');
+            $table->int('etat');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

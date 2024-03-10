@@ -31,5 +31,6 @@ Route::get('/Login', [ControllerLogin::class, 'LoginIndex'])->name('Login.index'
 Route::post('/Login', [ControllerLogin::class, 'Loginconnecter'])->name('Login.connecter');
 Route::get('/lougout', [ControllerLogin::class, 'lougout'])->name('lougout.index');
 Route::get('/Inscription', [Controllerinscription::class, 'Inscription_Index'])->name('Inscription.index');
+Route::post('/Inscription', [Controllerinscription::class, 'Inscription_creation'])->name('Inscription.creation');
 Route::get('/contact', [contactController::class, 'Conatactindex'])->name('contact.index');
 Route::post('/contactCreate', [contactController::class, 'inserercontact'])->name('contact.create');
