@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\authentification;
 
 use App\Http\Controllers\Controller;
+use App\Models\etudiant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,5 +32,11 @@ class ControllerLogin extends Controller
     Public function lougout(){
         Auth::logout();
         return redirect('/');
+    }
+    public function verfiedmail(User $id,$token){
+if($token==$id->rememberTokenName){
+    dd("hh");
+}
+
     }
 }
