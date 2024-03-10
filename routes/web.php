@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/EspaceEtudiant', [HomeSPaceetudiantConroller::class, 'Espace_etudiant_Homeindex'])->name('espace_etudiant.index');
+    Route::get('/Etudiant_Emploi_de_Temps', [HomeSPaceetudiantConroller::class, 'Etudiant_Emploi_de_Temps_Homeindex'])->name('espace_etudiant.emploi_de_temps');
 
 });
 Route::get('/', [homeController::class, 'Homeindex'])->name('home.index');

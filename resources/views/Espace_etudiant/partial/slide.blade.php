@@ -34,7 +34,7 @@
         Emplois de temps
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('espace_etudiant.emploi_de_temps')}}">
             <i class="fas fa-fw fa-bookmark"></i>
             <span>Emplois de temps</span>
         </a>

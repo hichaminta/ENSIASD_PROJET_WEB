@@ -69,7 +69,7 @@
                         <div class="featured-box">
                             <div class="feature-card">
                                 <a href="{{ route('evenement.detialls', $evenement) }}"><i class="fa-solid fa-link"></i></a>
-                                <img src="assets/Home/images/featured/events.jpg">
+                                <img src="assets/image/actualite/{{$evenement->image}}">
                             </div>
                             <div class="content">
                                 <h3>{{$evenement->Titreactualites}}</h3>

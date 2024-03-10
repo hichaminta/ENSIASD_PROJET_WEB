@@ -121,7 +121,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="_lk_bg_cd">
                         <i class="fal fa-users"></i>
-                        <div class="counting" data-count="60">0</div>
+                        <div class="counting" data-count="{{$nombre_etudiants}}">0</div>
                         <h5>Etudiants</h5>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="_lk_bg_cd">
                         <i class="fal fa-graduation-cap"></i>
-                        <div class="counting" data-count="2">0</div>
+                        <div class="counting" data-count="{{$nombre_fil}}">0</div>
                         <h5>Filières</h5>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                 @foreach ($actualites as $actualite)
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <article class="_lk_bg_sd_we">
-                            <div class="_bv_xs_we" style="background:url(assets/Home/images/blog/news.jpg"></div>
+                            <div class="_bv_xs_we" style="background:url(assets/image/actualite/{{$actualite->image}}"></div>
                             <div class="_xs_we_er">
                                 <div class="_he_w">
                                     <h3>{{$actualite->Titreactualites}}</h3>
