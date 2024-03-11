@@ -34,4 +34,4 @@ Route::get('/Inscription', [Controllerinscription::class, 'Inscription_Index'])-
 Route::post('/Inscription', [Controllerinscription::class, 'Inscription_creation'])->name('Inscription.creation');
 Route::get('/contact', [contactController::class, 'Conatactindex'])->name('contact.index');
 Route::post('/contactCreate', [contactController::class, 'inserercontact'])->name('contact.create');
-Route::get('/verifermail/{user}/{token}', [ControllerLogin::class, 'verfiedmail'])->name('verfiedmail.index');
+Route::get('/verifermail/{user}/{token}', [ControllerLogin::class, 'verifyEmail'])->name('verfiedmail.index');

@@ -28,7 +28,7 @@ class contactController extends Controller
             'sujet' => $request->input('subject'),
             'message' => $request->input('message'),
         ]);
-        return redirect()->route('contact.index')->with('success', 'categorie ajouter successfully.');
+        return redirect()->route('contact.index')->with('success', 'Contact envoyer successfully.');
 
     }
 }

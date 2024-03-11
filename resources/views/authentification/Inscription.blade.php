@@ -150,4 +150,4 @@
 </body>
 
 </html>
-{{-- <script src="/assets/Home/js/validation_inscription.js"></script> --}}
+<script src="/assets/Home/js/validation_inscription.js"></script>

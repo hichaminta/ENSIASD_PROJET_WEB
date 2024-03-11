@@ -45,14 +45,14 @@
         Actualités
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('home.index')}}">
             <i class="fas fa-fw fa-bookmark"></i>
             <span> Actualités
             </span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('evenement.index')}}">
             <i class="fas fa-fw fa-bookmark"></i>
             <span> Evenement
             </span>

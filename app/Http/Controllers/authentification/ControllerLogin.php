@@ -33,10 +33,22 @@ class ControllerLogin extends Controller
         Auth::logout();
         return redirect('/');
     }
-    public function verfiedmail(User $id,$token){
-if($token==$id->rememberTokenName){
-    dd("hh");
-}
+    public function verifyEmail(User $user, $token)
+    {
+        // Check if the provided token matches the user's remember token
+        if ($token === $user->remember_token) {
+            // Token matches, update the user's email verification status
+            $user->etat = 1;
+            $user->save();
 
+            // You can also perform additional actions if needed
+
+            // Redirect or display a success message
+            return redirect()->route('Login.index')->with('success', 'Email verified successfully');
+        } else {
+            // Token doesn't match, handle the error (e.g., redirect to an error page)
+            return redirect()->route('home.index')->with('error', 'Invalid verification token');
+        }
     }
+
 }
