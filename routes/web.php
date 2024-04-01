@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admincntrl\admincntrpage;
 use App\Http\Controllers\authentification\Controllerinscription;
 use App\Http\Controllers\authentification\ControllerLogin;
 use App\Http\Controllers\Espace_etudiant\HomeSPaceetudiantConroller;
@@ -24,6 +25,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/Etudiant_Emploi_de_Temps', [HomeSPaceetudiantConroller::class, 'Etudiant_Emploi_de_Temps_Homeindex'])->name('espace_etudiant.emploi_de_temps');
 
 });
+Route::get('/admin', [admincntrpage::class, 'indexcntrlpage'])->name('admin.index');
+Route::get('/admin/evenement', [admincntrpage::class, 'affcher_evenement'])->name('admin.evnement.index');
+Route::delete('/admin/evenement', [admincntrpage::class, 'suprimer_evenement'])->name('admin.evenement.delete');
+
 Route::get('/', [homeController::class, 'Homeindex'])->name('home.index');
 Route::get('/evenement', [homeevenementController::class, 'Evenementindex'])->name('evenement.index');
 Route::get('/evenement/{evenement}', [homeevenementController::class, 'detailsevent'])->name('evenement.detialls');
@@ -35,3 +40,4 @@ Route::post('/Inscription', [Controllerinscription::class, 'Inscription_creation
 Route::get('/contact', [contactController::class, 'Conatactindex'])->name('contact.index');
 Route::post('/contactCreate', [contactController::class, 'inserercontact'])->name('contact.create');
 Route::get('/verifermail/{user}/{token}', [ControllerLogin::class, 'verifyEmail'])->name('verfiedmail.index');
+// partie admin
