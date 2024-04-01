@@ -32,47 +32,47 @@
         </thead>
         <tbody>
             <!-- Loop through your events -->
-            @foreach ($evenements as $evenement)
+            @foreach ($actualites as $actualite)
                 <tr>
-                    <td>{{ $evenement->id }}</td>
-                    <td>{{ $evenement->Titreactualites }}</td>
-                    <td>{{ $evenement->Descriptionactualites }}</td>
-                    <td>{{ $evenement->dateactualites }}</td>
+                    <td>{{ $actualite->id }}</td>
+                    <td>{{ $actualite->Titreactualites }}</td>
+                    <td>{{ $actualite->Descriptionactualites }}</td>
+                    <td>{{ $actualite->dateactualites }}</td>
 
 
                     <td>
-                        <a class="btn btn-success" data-toggle="modal" data-target="#editModal{{ $evenement->id }}"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-success" data-toggle="modal" data-target="#editModal{{ $actualite->id }}"><i class="fas fa-edit"></i></a>
                     </td>
                     <td>
-                        <form method="POST" action="{{ route('admin.actualite.delete', $evenement->id) }}">
+                        <form method="POST" action="{{ route('admin.actualite.delete', $actualite->id) }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
-                <div class="modal fade" id="editModal{{ $evenement->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $evenement->id }}">
+                <div class="modal fade" id="editModal{{ $actualite->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $actualite->id }}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $evenement->id }}">Modifier les informations de l'événement</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $actualite->id }}">Modifier les informations de l'événement</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <!-- Add your form here to edit event information -->
-                                <form action="{{ route('admin.actualite.update', $evenement->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.actualite.update', $actualite->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <!-- Add your form fields here -->
                                     <div class="form-group">
                                         <label for="titre">Titre de l'événement:</label>
-                                        <input type="text" class="form-control" id="titre" name="titre" value="{{ $evenement->Titreactualites }}">
+                                        <input type="text" class="form-control" id="titre" name="titre" value="{{ $actualite->Titreactualites }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Description:</label>
-                                        <textarea class="form-control" id="description" name="description" rows="3">{{ $evenement->Descriptionactualites }}</textarea>
+                                        <textarea class="form-control" id="description" name="description" rows="3">{{ $actualite->Descriptionactualites }}</textarea>
                                     </div>
                                     <!-- Add more form fields as needed -->
                                     <div class="form-group">
@@ -80,12 +80,12 @@
                                         <input type="file" class="form-control-file" id="image" name="image">
                                     </div>
                                     <div class="form-group">
-                                        <label for="description">Placement d evenement:</label>
-                                        <textarea class="form-control" id="placeevenement" name="placeevenement" rows="3">{{ $evenement->Descriptionactualites }}</textarea>
+                                        <label for="description">Placement d actualite:</label>
+                                        <textarea class="form-control" id="placeactualite" name="placeactualite" rows="3">{{ $actualite->Descriptionactualites }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="date">Date d'événement:</label>
-                                        <input type="date" class="form-control" id="date" name="date" value="{{ $evenement->dateactualites }}">
+                                        <input type="date" class="form-control" id="date" name="date" value="{{ $actualite->dateactualites }}">
                                     </div>
                                     <!-- Add more form fields as needed -->
                                     <!-- Add your submit button -->
@@ -102,7 +102,7 @@
         </tbody>
     </table>
 
-    @if ($evenements->isEmpty())
+    @if ($actualites->isEmpty())
         <p>Aucun événement</p>
     @endif
 
@@ -135,8 +135,8 @@
                         <input type="file" class="form-control-file" id="image" name="image">
                     </div>
                     <div class="form-group">
-                        <label for="placeevenement">placee d' evnement</label>
-                        <input type="text" class="form-control" id="placeevenement" name="placeevenement" required>
+                        <label for="placeactualite">placee d' evnement</label>
+                        <input type="text" class="form-control" id="placeactualite" name="placeactualite" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Date d'événement:</label>

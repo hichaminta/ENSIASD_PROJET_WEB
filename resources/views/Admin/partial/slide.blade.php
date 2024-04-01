@@ -3,7 +3,8 @@
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
         <div class="sidebar-brand-text mx-3">
-            <img src="../../asset/image/logo-estg.png" alt=""     style="width: 100%;" >
+            <img src="../assets/Home/images/logo0001.png" alt="" style="width: 100%;">
+
         </div>
     </a>
     <hr class="sidebar-divider my-0">
@@ -12,13 +13,13 @@
         Gestion des evenement/article
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('admin.evnement.index')}}">
             <i class="fas fa-fw fa-user"></i>
             <span>Gestion des evenement</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('admin.actualite.index')}}">
             <i class="fas fa-fw fa-user"></i>
             <span>Gestion des article</span>
         </a>

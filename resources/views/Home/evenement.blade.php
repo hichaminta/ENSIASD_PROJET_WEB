@@ -4,7 +4,7 @@
     <section id="carouselExampleFade" class="carousel slide carousel-fade slider" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/Home/images/slider/1.jpg" class="d-block" alt="...">
+                <img src="../assets/Home/images/slider/1.jpg" class="d-block" alt="...">
                 <div class="carousel-caption">
                     <h2>Event 1</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui perspiciatis, eveniet sequi labore
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/Home/images/slider/2.jpg" class="d-block" alt="...">
+                <img src="../assets/Home/images/slider/2.jpg" class="d-block" alt="...">
                 <div class="carousel-caption">
                     <h2>Event 2</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui perspiciatis, eveniet sequi labore
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/Home/images/slider/3.jpg" class="d-block" alt="...">
+                <img src="../assets/Home/images/slider/3.jpg" class="d-block" alt="...">
                 <div class="carousel-caption">
                     <h2>Event 3</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui perspiciatis, eveniet sequi labore
@@ -69,7 +69,8 @@
                         <div class="featured-box">
                             <div class="feature-card">
                                 <a href="{{ route('evenement.detialls', $evenement) }}"><i class="fa-solid fa-link"></i></a>
-                                <img src="assets/image/actualite/{{$evenement->image}}">
+                                <img src="../assets/image/actualite/{{$evenement->image}}">
+
                             </div>
                             <div class="content">
                                 <h3>{{$evenement->Titreactualites}}</h3>

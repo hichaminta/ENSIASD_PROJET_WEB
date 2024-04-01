@@ -27,7 +27,15 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::get('/admin', [admincntrpage::class, 'indexcntrlpage'])->name('admin.index');
 Route::get('/admin/evenement', [admincntrpage::class, 'affcher_evenement'])->name('admin.evnement.index');
-Route::delete('/admin/evenement', [admincntrpage::class, 'suprimer_evenement'])->name('admin.evenement.delete');
+Route::delete('/admin/evenement/{id}', [admincntrpage::class, 'suprimer_evenement'])->name('admin.evenement.delete');
+Route::put('/admin/evenement/{id}', [admincntrpage::class, 'modifier_evenement'])->name('admin.evenement.update');
+Route::post('/admin/evenement', [admincntrpage::class, 'ajouter_evenement'])->name('admin.evenement.add');
+
+Route::delete('/admin/actualite/{id}', [admincntrpage::class, 'suprimer_actualite'])->name('admin.actualite.delete');
+Route::put('/admin/actualite/{id}', [admincntrpage::class, 'modifier_actualite'])->name('admin.actualite.update');
+Route::get('/admin/actualites', [admincntrpage::class, 'affcher_actualite'])->name('admin.actualite.index');
+
+Route::post('/admin/actualite', [admincntrpage::class, 'ajouter_actualite'])->name('admin.actualite.add');
 
 Route::get('/', [homeController::class, 'Homeindex'])->name('home.index');
 Route::get('/evenement', [homeevenementController::class, 'Evenementindex'])->name('evenement.index');
