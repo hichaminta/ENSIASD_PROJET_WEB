@@ -62,7 +62,7 @@
                             </div>
                             <div class="modal-body">
                                 <!-- Add your form here to edit event information -->
-                                <form action="{{ route('admin.actualite.update', $actualite->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.evenement.update', $actualite->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <!-- Add your form fields here -->
@@ -80,8 +80,9 @@
                                         <input type="file" class="form-control-file" id="image" name="image">
                                     </div>
                                     <div class="form-group">
-                                        <label for="description">Placement d actualite:</label>
-                                        <textarea class="form-control" id="placeactualite" name="placeactualite" rows="3">{{ $actualite->Descriptionactualites }}</textarea>
+                                        <label for="description">Placement d evenement:</label>
+                                        <input type="text" class="form-control" id="placeevenement" name="placeevenement" value="{{ $actualite->placeevenement }}">
+
                                     </div>
                                     <div class="form-group">
                                         <label for="date">Date d'événement:</label>

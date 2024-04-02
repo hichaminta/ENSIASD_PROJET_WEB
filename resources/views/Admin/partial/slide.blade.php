@@ -21,29 +21,40 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('admin.actualite.index')}}">
             <i class="fas fa-fw fa-user"></i>
-            <span>Gestion des article</span>
+            <span>Gestion des actualites</span>
         </a>
     </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
-        Gestion des filiere
+        Gestion des etudiants
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('admin.filieres.index')}}">
             <i class="fas fa-fw fa-bookmark"></i>
             <span>Gestion des filieres</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('admin.emploidetemepss.index')}}">
             <i class="fas fa-fw fa-book"></i>
             <span>Gestion des emploi de temps</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.annonces.index')}}">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Gestion des annnonce</span>
         </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.contact.index')}}">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Contact</span>
+        </a>
+    </li>
     <!-- Heading -->
 
 
