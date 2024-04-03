@@ -24,6 +24,9 @@ class ControllerLogin extends Controller
              if(auth()->user()->role=='etudiant'){
                 return redirect()->route('espace_etudiant.index');
              }
+             else if(auth()->user()->role=='admin'){
+                return redirect()->route('admin.actualite.index');
+             }
 
         } else {
             return redirect()->route('Login.index')->with('error', 'Invalid email or password.');

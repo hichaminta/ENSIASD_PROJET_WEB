@@ -30,7 +30,7 @@ class admincntrpage extends Controller
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4000',
             'placeevenement' => 'required|string',
             'date' => 'required|date',
         ]);
@@ -66,7 +66,7 @@ class admincntrpage extends Controller
     $validatedData = $request->validate([
         'titre' => 'required|string|max:255',
         'description' => 'required|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4000',
         'placeevenement' => 'required|string',
         'date' => 'required|date',
     ]);
@@ -110,7 +110,7 @@ class admincntrpage extends Controller
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4000',
             'placeactualite' => 'required|string',
             'date' => 'required|date',
         ]);
@@ -156,7 +156,7 @@ class admincntrpage extends Controller
         // Valider les données du formulaire
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
-            'pdf' => 'nullable|mimes:pdf|max:2048',
+            'pdf' => 'nullable|mimes:pdf|max:4000',
         ]);
 
         // Si un fichier PDF est fourni, sauvegardez-le
@@ -197,7 +197,7 @@ class admincntrpage extends Controller
         // Valider les données du formulaire
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
-            'pdf' => 'nullable|mimes:pdf|max:2048',
+            'pdf' => 'nullable|mimes:pdf|max:4000',
         ]);
 
         // Mettre à jour les champs de la filière
@@ -325,7 +325,7 @@ class admincntrpage extends Controller
             'titre' => 'required|string',
             'date_annonce' => 'required|date',
             'Description' => 'required|string',
-            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4000',
         ]);
 
         // Initialize new Annonce instance
@@ -359,7 +359,7 @@ class admincntrpage extends Controller
             'titre' => 'required|string',
             'date_annonce' => 'required|date',
             'Description' => 'required|string',
-            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'Image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4000',
         ]);
 
         // Update the annonce

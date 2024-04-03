@@ -19,7 +19,6 @@
                 <th>Titre</th>
                 <th>Date Annonce</th>
                 <th>Description</th>
-                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -31,13 +30,7 @@
                     <td>{{ $annonce->titre }}</td>
                     <td>{{ $annonce->date_annonce }}</td>
                     <td>{{ $annonce->Description }}</td>
-                    <td>
-                        @if ($annonce->Image)
-                            <img src="{{ asset('assets/image/annonce/' . $annonce->Image) }}" alt="Annonce Image" style="max-width: 100px;">
-                        @else
-                            No Image
-                        @endif
-                    </td>
+
                     <td>
                         <a class="btn btn-success" data-toggle="modal" data-target="#editModal{{ $annonce->id }}"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{ route('admin.annonces.delete', $annonce->id) }}">
